@@ -1,0 +1,20 @@
+
+    <h3><%= @auction.title %></h3>
+    <p><em>Details: </em>
+      <%= @auction.details %></p>
+    <p><em>Reserve Price: </em><%= @auction.reserve_price %></p>
+
+<br><br><hr>
+<%= render 'bids/form' %>
+<%#= link_to "Bid Archive", auction_bids_path(auction) %>
+<div id="bids">
+
+    <h3>Bids: </h3>
+
+    <% @auction.bids.each do |b| %>
+    <%= render "bids/bid", bid: b %>
+    <% end %>
+</div>
+<div id="bid_body">
+
+</div>

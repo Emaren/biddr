@@ -1,0 +1,12 @@
+    <% @auctions.each do |auction| %>
+    <p><h2><%= auction.title %></h2>
+      <%= auction.id %>
+
+    <%= link_to "Show", auction_path(auction) %>
+    <%= link_to "Edit", edit_auction_path(auction) %>
+    <%= link_to "Destroy", auction_path(auction), method: :delete, data: { confirm: "Confirm Deletion?"} %></p>
+    <p>
+      <%= link_to "New Bid", new_auction_bid_path([:auction_id]) %>
+    </p>
+
+    <% end %>
